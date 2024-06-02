@@ -17,7 +17,7 @@ $count = mysqli_num_rows($result);
 if ($count > 0) {  
     $_SESSION['username'] = $username;
     $_SESSION['status'] = "login";
-    header("Location:index.html");
+    header("Location:index.php");
     exit();
 }
 else {  
