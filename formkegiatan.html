@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kegiatan</title>
+    <link rel="stylesheet" href="formkegiatan.css">
+</head>
+<body>
+    <header>
+        <center>
+            <h1>
+                Form Tambah Kegiatan
+            </h1>
+        </center>
+    </header>
+    <main>
+        <a href="index.html"><button id="back">Back</button></a>
+        <center>
+            <form action="tambahdata.php" method="POST" id="formkegiatan" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><label for="namakegiatan">Nama Kegiatan :</label></td>
+                        <td><input type="text" name="namakegiatan" id="namakegiatan" placeholder="Masukkan nama kegiatan"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tanggalmulai">Tanggal Mulai :</label></td>
+                        <td><input type="date" name="tanggalmulai" id="tanggalmulai"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tanggalselesai">Tanggal Selesai :</label></td>
+                        <td><input type="date" name="tanggalselesai" id="tanggalselesai"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="jamkegiatan">Jam Kegiatan :</label></td>
+                        <td><input type="time" name="jamkegiatan" id="jamkegiatan"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="durasi">Durasi :</label></td>
+                        <td><input type="text" name="durasi" id="durasi" placeholder="30 menit, 1 jam, 2 jam, ..."></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lokasi">Lokasi :</label></td>
+                        <td><input type="text" name="lokasi" id="lokasi" placeholder="Masukkan lokasi kegiatan"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="level">Level :</label></td>
+                        <td>
+                            <input type="radio" id="level" name="level" value="Biasa" required>
+                            <label for="biasa">Biasa</label>
+                            <input type="radio" id="level" name="level" value="Sedang" required>
+                            <label for="sedang">Sedang</label>
+                            <input type="radio" id="level" name="level" value="Penting" required>
+                            <label for="penting">Penting</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gambar">Gambar :</label></td>
+                        <td><input type="file" name="gambar" id="gambar" placeholder="Upload gambar"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" name="submit" id="submit">
+                <input type="reset" name="reset" id="reset"> <br> <br>
+                <span class="warning" hidden>For Error</span>
+            </form>
+        </center>
+        <img id="anya" src="https://pnganime.com/web/images/a/anya-forger-pointing.png" alt="stickyimage">
+        <img id="yor" src="https://animegirlpng.com/wp-content/uploads/2023/03/1680175444797-671x1024.png" alt="stickyimage2">
+    </main>
+    <footer>
+        <center>
+            FTI UKDW 2023 ©Copyright
+        </center>
+    </footer>
+</body>
+</html>
+<script src="formkegiatan.js"></script>

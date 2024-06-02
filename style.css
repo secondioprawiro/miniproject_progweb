@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header center {
+    padding: 10px;
+    background-color: #8da99b;
+}
+
+table tr td{
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: #610a10;
+}
+
+table{
+    border-spacing: 2px;
+    margin: 50px;
+    color: #fab3ad;
+}
+
+.hari{
+    height: 0%;
+}
+
+tr{
+    height: 100px;
+}
+
+td{
+    vertical-align: text-top;
+    width: 130px;
+}
+
+.kegiatan{
+    list-style: none;
+    display: contents;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #8da99b;
+    color: white;
+}
+
+footer center{
+    font-size: large;
+    padding: 20px;
+}
+
+body{
+    background-color: #57675c;
+}
+
+header h1{color: white;}
+
+a:link{
+    color: #fab3ad;
+}
+
+#anya{
+    position: fixed;
+    bottom: 50px;
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+
+#yor{
+    position: sticky;
+    bottom: 0px;
+    float: right;
+    width: 200px;
+    height: 300px;
+}
+
+.alink{
+    color: #fab3ad;
+    float: right;
+}
+
+#namabulan{
+    text-align: center;
+    margin-top: 30px;
+    color: #fab3ad;
+}
+
+.alink:hover{
+    background-color: blue;
+}
+#prevButton {
+    background-color: #fab3ad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #prevButton:hover {
+    color: #8da99b;
+  }
+
+  #nextButton {
+    background-color: #fab3ad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #nextButton:hover {
+    color: #8da99b;
+  }
+
+  #formkegiatanButton {
+    background-color: #fab3ad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #formkegiatanButton:hover {
+    color: #8da99b;
+  }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="videobg">
+        <video src="videobg.mp4" autoplay muted></video>
+    </div>
+    <main>
+        <div id="login">
+            <!-- username admin password admin -->
+            <h2>Login</h2>
+            <form action="validate.php" method="POST" onsubmit="return validasi()">
+                <input type="text" name="username" id="username" placeholder="Username"> <br> <br>
+                <input type="password" name="password" id="password" placeholder="Password"> <br> <br>
+                <input type="submit" name="loginbutton" id="loginbutton" value="Log-in"></input> <br><br>
+                <span class="warning" hidden>For Error</span>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+<script src="login.js"></script>

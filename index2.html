@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Detail</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+  <header>
+    <h1>My To-do List</h1>
+    <a href="index.html" class="back-button">
+      <img id="button" src="https://cdn.icon-icons.com/icons2/789/PNG/512/back_icon-icons.com_65134.png"
+        alt="Kembali"><br>Back To Menu
+    </a>
+  </header>
+  <main>
+    <div id="activityContainer"></div>
+    <img id="anya" src="https://pnganime.com/web/images/a/anya-forger-pointing.png" alt="stickyimage">
+    <img id="yor" src="https://animegirlpng.com/wp-content/uploads/2023/03/1680175444797-671x1024.png" alt="stickyimage2">
+  </main>
+  <footer>
+    <hr>
+    <center>
+      FTI UKDW 2023 &copy; All rights reserved
+    </center>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the URL parameter 'tanggal'
+      const urlParams = new URLSearchParams(window.location.search);
+      const tanggal = urlParams.get('tanggal');
+
+      // Fetch data from detailkegiatan.php
+      fetch('detailkegiatan.php?tanggal=' + tanggal)
+        .then(response => response.json())
+        .then(data => {
+          // Create activity elements for each data item
+          data.forEach(function (activity) {
+            const activityContainer = document.getElementById('activityContainer');
+
+            // Create the activity container
+            const activityDiv = document.createElement('div');
+            activityDiv.classList.add('activity');
+
+            // Create the activity image
+            const activityImage = document.createElement('img');
+            activityImage.src = activity.filepath;
+            activityImage.alt = 'Activity Image';
+            activityDiv.appendChild(activityImage);
+
+            // Create the activity details
+            const activityDetails = document.createElement('div');
+            activityDetails.classList.add('activity-details');
+
+            const activityName = document.createElement('h2');
+            activityName.textContent = activity.name;
+            activityDetails.appendChild(activityName);
+
+            const activityDate = document.createElement('p');
+            activityDate.textContent = 'Tanggal: ' + activity.startdate + ' - ' + activity.finishdate;
+            activityDetails.appendChild(activityDate);
+
+            const activityTime = document.createElement('p');
+            activityTime.textContent = 'Waktu: ' + activity.jamkegiatan;
+            activityDetails.appendChild(activityTime);
+
+            const activityDuration = document.createElement('p');
+            activityDuration.textContent = 'Durasi: ' + activity.durasi;
+            activityDetails.appendChild(activityDuration);
+
+            const activityLocation = document.createElement('p');
+            activityLocation.textContent = 'Lokasi: ' + activity.lokasi;
+            activityDetails.appendChild(activityLocation);
+
+            const activityLevel = document.createElement('p');
+            activityLevel.textContent = 'Level: ' + activity.level;
+            activityDetails.appendChild(activityLevel);
+
+            // Create the delete button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.classList.add('delete-button');
+            deleteButton.addEventListener('click', function () {
+              // Menghapus kegiatan
+              // Memberikan konfimasi hapus
+              const confirmation = confirm('Apakah kamu yakin ingin menghapus kegiatan ini?');
+              if (confirmation) {
+                const currentDate = new Date();
+                const activityFinishDate = new Date(activity.finishdate);
+                //Jika kegiatan telah selesai maka tidak bisa dihapus
+                if (activityFinishDate < currentDate) {
+                  alert('Kegiatan ini tidak bisa dihapus karena sudah selesai.');
+                } else {
+                  deleteActivity(activity.id);
+                  window.location.href = 'index.html';
+                }
+              }
+            });
+            activityDetails.appendChild(deleteButton);
+
+            activityDiv.appendChild(activityDetails);
+
+            // Append the activity container to the main container
+            activityContainer.appendChild(activityDiv);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching activity data:', error);
+        });
+    });
+
+    function deleteActivity(activityId) {
+      // Perform deletion logic here, e.g., send a request to a delete endpoint
+      // You can use the activityId to identify the activity to delete
+      console.log('Deleting activity with ID:', activityId);
+
+      // Send a request to deletekegiatan.php using fetch
+      fetch('deletekegiatan.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: 'id_kegiatan=' + activityId
+        })
+        .then(response => response.text())
+        .then(data => {
+          console.log(data); // Display the response from deletekegiatan.php
+        })
+        .catch(error => {
+          console.error('Error deleting activity:', error);
+        });
+    }
+  </script>
+</body>
+
+</html>

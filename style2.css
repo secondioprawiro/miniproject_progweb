@@ -1,0 +1,127 @@
+header {
+    background-color: #8da99b;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    padding: 10px;
+  }
+  
+  body {
+    background-color: #57675c;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .back-button {
+    display: inline-block;
+    background-color: #610a10;
+    border: none;
+    color: #fab3ad;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+  }
+  
+  .back-button:hover {
+    background-color: #fab3ad;
+    color: #610a10;
+  }
+  
+  .back-button img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+  }
+  
+  footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #8da99b;
+    color: white;
+  }
+  
+  footer center {
+    font-size: large;
+    padding: 20px;
+  }
+  
+  #activityContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .activity {
+    background-color: #610a10;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .activity img {
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .activity-details h2 {
+    margin-top: 0;
+    color: #fab3ad;
+  }
+  
+  .activity-details p {
+    margin: 5px 0;
+    color: #fab3ad;
+  }
+
+  .delete-button {
+    background-color: #fab3ad;
+    color: #610a10;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .delete-button:hover {
+    background-color: #fab3ad;
+    color: #8da99b;
+  }
+  
+  #anya{
+    position: fixed;
+    bottom: 50px;
+    float: left;
+    width: 200px;
+    height: 200px;
+  }
+
+  #yor{
+      position: sticky;
+      bottom: 0px;
+      float: right;
+      width: 200px;
+      height: 300px;
+  }
